@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jelly SAT Prep | Digital SAT Tutoring with Joel Kim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Digital SAT tutoring and March 14 SAT bootcamp with Joel Kim. Perfect 1600 scorer, 7+ years of tutoring experience, up-to-date strategies and personalized homework." />
+  <style>
+    :root {
+      --primary: #1b6ef3;
+      --primary-dark: #1147a3;
+      --background: #f5f7fb;
+      --text: #1b1b1f;
+      --accent: #ffd65a;
+      --card-bg: #ffffff;
+      --muted: #6b7280;
+      --max-width: 1100px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 247, 251, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.09);
+      color: #15803d;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tag span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 2.7rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, var(--primary), var(--primary-dark));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 30rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      border: none;
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.75rem 1.1rem;
+      background: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .hero-subtext {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #eef2ff, #e0f2fe, #f9fafb);
+      border-radius: calc(var(--radius-lg) + 6px);
+      padding: 1.4rem 1.35rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .hero-card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .metric-pill {
+      border-radius: 0.9rem;
+      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .metric-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .hero-card-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    section {
+      margin: 2rem 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      gap: 0.75rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.4rem;
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.1rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
+      gap: 1.3rem;
+      align-items: flex-start;
+    }
+
+    .about p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .list-dash {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .list-dash li::before {
+      content: "– ";
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-left: 3px solid rgba(148, 163, 184, 0.7);
+      padding-left: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 0.35rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.1rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .testimonial-name {
+      margin-top: 0.7rem;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Pricing styling */
+    .price-row {
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: var(--muted);
+      margin-right: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .new-price {
+      color: #15803d;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 1.2rem;
+    }
+
+    .contact-side {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-side strong {
+      color: var(--text);
+    }
+
+    .contact-list {
+      margin-top: 0.5rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1rem 1.5rem 1.3rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero, .two-col, .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 1.1rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .hero {
+        padding-top: 1.5rem;
+      }
+    }
+  </style>
+
+  <!-- Calendly inline widget styles -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <div class="logo-badge">JK</div>
+        <div>Jelly SAT Prep</div>
+      </div>
+      <div class="nav-links">
+        <a href="#programs">Programs</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <button class="nav-cta"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jellysatprep/30min'}); return false;">
+          Book a Call
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-tag">
+          <span></span>
+          March 14 Digital SAT Bootcamp • Online
+        </div>
+        <h1>
+          Digital SAT prep with a
+          <span class="hero-highlight">perfect 1600 guide.</span>
+        </h1>
+        <p>
+          I’m Joel Kim, a Digital SAT tutor with a perfect 1600 score and over 7 years of teaching experience.
+          I retake the Digital SAT with my students so every strategy you learn is current, tested, and focused
+          on the latest version of the exam.
+        </p>
+
+        <div class="hero-cta-row">
+          <button class="btn-primary"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jellysatprep/30min'}); return false;">
+            Schedule a free 15-minute consult
+          </button>
+          <button class="btn-ghost"
+            onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">
+            View bootcamp and 1:1 coaching
+          </button>
+        </div>
+        <div class="hero-subtext">
+          100% online • Personalized homework • Up-to-date Digital SAT strategies
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Bootcamp snapshot">
+        <h2>March 14 Digital SAT Bootcamp</h2>
+        <div class="hero-card-grid">
+          <div class="metric-pill">
+            <div class="metric-label">Main offer</div>
+            <div class="metric-value">Bootcamp</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">Focused on March 14 test date</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-label">Weekly time</div>
+            <div class="metric-value">4 hours / week</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">2 hours lesson + 2 hours office hours</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-label">Support</div>
+            <div class="metric-value">Live office hours</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">Ask questions and review homework</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-label">Format</div>
+            <div class="metric-value">Online</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">Recorded sessions available</div>
+          </div>
+        </div>
+        <p class="hero-card-note">
+          Many prep programs reuse old materials and have tutors who never sat for the Digital SAT.  
+          This bootcamp is built around the current test and real student data from each new administration.
+        </p>
+      </aside>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs">
+      <div class="section-heading">
+        <h2>Programs and pricing</h2>
+        <p>Choose between the March 14 bootcamp and 1:1 coaching support.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>March 14 SAT Bootcamp (Main Offer)</h3>
+          <p>
+            A structured online bootcamp that covers everything students need to succeed on the March 14 Digital SAT.
+            We work through the tested content, repeatable strategies, and realistic practice so test day feels familiar.
+          </p>
+          <ul class="list-dash">
+            <li>4 hours per week: 2 hours of live teaching and 2 hours of office hours</li>
+            <li>Personalized homework aligned with student goals</li>
+            <li>Up-to-date Digital SAT materials and question types</li>
+            <li>Session recordings available for review</li>
+          </ul>
+          <div class="price-row">
+            <span class="old-price">$1200</span>
+            <span class="new-price">$775 total</span>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Best value</span>
+            <span class="pill">March 14 focus</span>
+            <span class="pill">Comprehensive</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>1:1 Digital SAT Coaching</h3>
+          <p>
+            Individual coaching for students who want fully personalized pacing, accountability, and problem-by-problem feedback.
+            Ideal for busy schedules or specific score targets.
+          </p>
+          <ul class="list-dash">
+            <li>Custom lesson plans and homework each week</li>
+            <li>Deep review of missed questions and testing habits</li>
+            <li>Flexible scheduling to match school and activities</li>
+          </ul>
+          <div class="price-row">
+            <span class="old-price">$225 / hour</span>
+            <span class="new-price">$150 / hour</span>
+          </div>
+          <div class="pill-row">
+            <span class="pill">1:1 attention</span>
+            <span class="pill">Highly personalized</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Strategy and Check-in Sessions</h3>
+          <p>
+            Shorter packages for students who have already been preparing but need help with strategy, timing, or
+            test-day planning before March 14.
+          </p>
+          <ul class="list-dash">
+            <li>Single or limited-session options</li>
+            <li>Focus on timing, mindset, and section strategies</li>
+            <li>Great for a tune-up alongside existing prep</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">Targeted help</span>
+            <span class="pill">Flexible</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT + RESULTS -->
+    <section id="about">
+      <div class="section-heading">
+        <h2>About Joel and teaching style</h2>
+        <p>Perfect score, calm approach, and current strategies.</p>
+      </div>
+
+      <div class="two-col">
+        <article class="about">
+          <p>
+            I’m <strong>Joel Kim</strong>, a Digital SAT specialist with a perfect <strong>1600</strong> score.
+            I have been tutoring for more than <strong>7 years</strong> and I take the Digital SAT alongside my students
+            so I can adjust strategies each time the test changes.
+          </p>
+          <p>
+            Many prep programs reuse outdated worksheets or rely on tutors who have never taken the Digital SAT.
+            My students work with materials that reflect the current exam and receive homework that is personalized
+            to their score range, schedule, and goals.
+          </p>
+          <ul class="list-dash">
+            <li>Clear, step-by-step strategies instead of random tricks</li>
+            <li>Homework tailored to each student’s weak spots</li>
+            <li>Think-aloud explanations so students see how to reason</li>
+            <li>Supportive environment that encourages questions</li>
+          </ul>
+        </article>
+
+        <article id="results" class="card">
+          <h3>What students and parents notice</h3>
+          <p style="margin-bottom:0.7rem;">
+            Every student is different, but some common themes stand out.
+          </p>
+          <div class="testimonial">
+            “My child went from feeling overwhelmed by the new Digital SAT format to walking into test day with a game plan and confidence.”
+            <span>Parent of 11th grader</span>
+          </div>
+          <div class="testimonial">
+            “Joel explains what he is thinking at each step so I can handle similar problems on my own instead of guessing.”
+            <span>Student, Class of 2026</span>
+          </div>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.4rem;">
+            For more detailed references, feel free to ask during your consult call.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FIT SECTION -->
+    <section>
+      <div class="section-heading">
+        <h2>Is this a good fit for your student?</h2>
+        <p>Who tends to benefit the most from this style of prep.</p>
+      </div>
+      <div class="two-col">
+        <article class="card">
+          <h3>Great fit if your student…</h3>
+          <ul class="list-dash">
+            <li>Wants a clear weekly plan instead of studying alone</li>
+            <li>Likes asking “why” and seeing each step explained</li>
+            <li>Feels anxious about testing and needs calmer strategies</li>
+            <li>Is ready to put in consistent practice before March 14</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>May not be a fit if your student…</h3>
+          <ul class="list-dash">
+            <li>Is hoping for a last-minute score jump without homework</li>
+            <li>Cannot commit any time between sessions for practice</li>
+            <li>Only wants shortcuts instead of understanding patterns</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-heading">
+        <h2>Student results and experiences</h2>
+        <p>Real stories from students who worked with Joel.</p>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <p>
+            “I improved my SAT score by 340 points. Joel did not just help me raise my score; his test-taking strategies
+            and materials also helped me perform better in my school classes and improve my grades.”
+          </p>
+          <div class="testimonial-name">Steven Jordan</div>
+          <div class="testimonial-role">SAT Student</div>
+        </article>
+
+        <article class="testimonial-card">
+          <p>
+            “Joel is a great teacher who truly meets you where you are and helps you reach, and even exceed, your goals.
+            With the personalized SAT curriculum he created for me, I improved my score from a 1130 to a 1520,
+            something I could not have achieved on my own.”
+          </p>
+          <div class="testimonial-name">Conny Kim</div>
+          <div class="testimonial-role">SAT Student</div>
+        </article>
+
+        <article class="testimonial-card">
+          <p>
+            “Mr. Kim’s tutoring improved my SAT score by over 100 points and brought me from a B to an A in AP Precalculus.
+            He was kind, easy to talk to, and willing to explain concepts as many times as I needed until I understood them.
+            During our tutoring, my overall score rose from 1450 to 1560, and I earned a perfect 800 on the Reading and Writing section.”
+          </p>
+          <div class="testimonial-name">Kenna Charbauski</div>
+          <div class="testimonial-role">SAT Student</div>
+        </article>
+
+        <article class="testimonial-card">
+          <p>
+            “Working with Joel was a game-changer for my SAT prep. His personalized approach and deep understanding of the
+            Digital SAT format helped me boost my score from 1290 to 1480. The strategies I learned helped me on the SAT and
+            also improved my overall test-taking skills in all my classes.”
+          </p>
+          <div class="testimonial-name">Maria Rodriguez</div>
+          <div class="testimonial-role">SAT Student</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-heading">
+        <h2>Next step: free 15-minute consult</h2>
+        <p>Book directly on Joel’s calendar.</p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="card">
+          <!-- Calendly inline widget -->
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/jellysatprep/30min"
+               style="min-width:320px;height:650px;"></div>
+        </article>
+
+        <aside class="contact-side">
+          <p>
+            Prefer to reach out directly? You can contact me here:
+          </p>
+          <ul class="contact-list">
+            <li><strong>Phone (preferred):</strong> <a href="tel:12402598881">(240) 259-8881</a></li>
+            <li><strong>Email:</strong> <a href="mailto:jellysatprep@gmail.com">jellysatprep@gmail.com</a></li>
+            <li><strong>Format:</strong> 100% online tutoring for students in any time zone</li>
+          </ul>
+          <p style="margin-top:0.7rem;">
+            During our consult, we will talk about:
+          </p>
+          <ul class="list-dash">
+            <li>Your student’s current scores and experience with the SAT</li>
+            <li>The timeline leading up to the March 14 Digital SAT</li>
+            <li>Whether the bootcamp, 1:1 coaching, or a mix is the best fit</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Jelly SAT Prep · Tutoring by Joel Kim</div>
+      <div class="footer-links">
+        <a href="#programs">Programs</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calendly widget script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
